@@ -1,0 +1,29 @@
+<h3>Create a new Player</h3>
+
+<div class="">
+    <div class="">
+        <form class="form">
+            <fieldset>
+                <label>first name</label>
+                <input name="firstname" ng-model="player.firstname" required/>
+            </fieldset>
+
+            <fieldset>
+                <label>last name</label>
+                <input type="text" name="lastname" ng-model="player.lastname" required/>
+            </fieldset>
+
+            <fieldset>
+                <label>email</label>
+                <input type="text" name="email" ng-model="player.email" required/>
+            </fieldset>
+
+            <fieldset>
+                <label>Description</label>
+                <textarea name="description" ng-model="player.description"></textarea>
+            </fieldset>
+
+            <button class="btn" ng-click="createCtrl.savePlayer(player)">Save</button>
+        </form>
+    </div>
+</div>

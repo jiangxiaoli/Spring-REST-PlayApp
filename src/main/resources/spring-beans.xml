@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="playerDAO" class="edu.sjsu.cmpe275.lab3.dao.JpaPlayerDAO">
+        <property name="entityManagerFactory" ref="myEmf" />
+    </bean>
+
+    <bean id="sponsorDAO" class="edu.sjsu.cmpe275.lab3.dao.JpaSponsorDAO">
+        <property name="entityManagerFactory" ref="myEmf" />
+    </bean>
+
+    <bean id="opponentDAO" class="edu.sjsu.cmpe275.lab3.dao.JpaOpponentDAO">
+        <property name="entityManagerFactory" ref="myEmf" />
+    </bean>
+
+</beans>

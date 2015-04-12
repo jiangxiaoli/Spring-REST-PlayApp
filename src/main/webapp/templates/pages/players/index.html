@@ -1,0 +1,13 @@
+<h4>Player index</h4>
+
+<a class="btn btn-primary" ng-href="#/newplayer">Create a new Player</a>
+
+<div class="jumbotron">
+    <a ng-repeat="player in indexCtrl.players" ng-href="#/players/{{player.player_id}}">
+        <div class="well">
+            <h3>{{player.player_id}}</h3>
+            <h4>{{player.firstname}} , {{player.lastname}}</h4>
+            <h4>{{player.email}}</h4>
+        </div>
+    </a>
+</div>
