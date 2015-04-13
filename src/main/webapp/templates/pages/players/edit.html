@@ -1,34 +1,81 @@
 <div class="jumbotron">
     <div>
+        <h2>{{player.player_id}}</h2>
         <form>
+            <fieldset class="form-group">
+                <label for="firstname">firstname</label>
+                <input class="form-control" type="text" id="firstname" name="firstname" value="{{player.firstname}}" ng-model="player.firstname" required>
+            </fieldset>
 
-            <h2>{{player.player_id}}</h2>
-            <p>{{player.firstname}}</p>
-            <p>{{player.lastname}}</p>
-            <p>{{player.email}}</p>
-            <p>{{player.description}}</p>
+            <fieldset class="form-group">
+                <label for="lastname">lastname</label>
+                <input class="form-control" type="text" id="lastname" name="lastname" value="{{player.lastname}}" ng-model="player.lastname" required>
+            </fieldset>
 
-            <h4>Address</h4>
-            <p>{{player.address.street}}</p>
-            <p>{{player.address.city}}</p>
-            <p>{{player.address.state}}</p>
-            <p>{{player.address.zip}}</p>
-
-            <h4>Sponsor</h4>
-            <a ng-href="#/sponsors/{{player.sponsor.sponsor_id}}">
-                <p>{{player.sponsor.name}}</p>
-            </a>
+            <fieldset class="form-group">
+                <label for="email">email</label>
+                <input class="form-control" type="text" id="email" name="email" value="{{player.email}}" ng-model="player.email" required>
+            </fieldset>
 
 
+            <fieldset class="form-group">
+                <label for="description">description</label>
+                <textarea class="form-control" id="description" name="description" ng-model="player.description">{{player.description}}</textarea>
+            </fieldset>
+
+            <!--address-->
+
+            <fieldset class="form-group">
+                <label for="street">Street</label>
+                <input class="form-control" type="text" id="street" name="street" value="{{player.address.street}}" ng-model="player.address.street">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="city">City</label>
+                <input class="form-control" type="text" id="city" name="city" value="{{player.address.city}}" ng-model="player.address.city">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="state">State</label>
+                <input class="form-control" type="text" id="state" name="state" value="{{player.address.state}}" ng-model="player.address.state">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="zip">zip</label>
+                <input class="form-control" type="text" id="zip" name="zip" value="{{player.address.zip}}" ng-model="player.address.zip">
+            </fieldset>
+
+
+
+            <!--<fieldset class="form-group">-->
+                <!--<label for="title">User</label>-->
+                <!--<select ng-options="user.id as user.name for user in users" ng-model="note.userId"></select>-->
+            <!--</fieldset>-->
+
+            <input type="submit" value="{{isSubmitting ? 'saving...' : 'Save'}}" class="btn btn-default" ng-click="updatePlayer(player)" ng-disabled="isSubmitting">
         </form>
 
-        <h4>Opponents</h4>
-        <div>
-            <a ng-repeat="opponent in player.opponents" ng-href="#/players/{{opponent.player_id}}">
-                <p>{{opponent.player_id}}</p>
-                <p>{{opponent.firstname}}</p>
-                <p>{{opponent.lastname}}</p>
-            </a>
-        </div>
+
+
+
+
+
+            <!--<h4>Address</h4>-->
+            <!--<p>{{player.address.street}}</p>-->
+            <!--<p>{{player.address.city}}</p>-->
+            <!--<p>{{player.address.state}}</p>-->
+            <!--<p>{{player.address.zip}}</p>-->
+
+            <!--<h4>Sponsor</h4>-->
+            <!--<a ng-href="#/sponsors/{{player.sponsor.sponsor_id}}">-->
+                <!--<p>{{player.sponsor.name}}</p>-->
+            <!--</a>-->
+        <!---->
+
+        <!--<h4>Opponents</h4>-->
+        <!--<div>-->
+            <!--<a ng-repeat="opponent in player.opponents" ng-href="#/players/{{opponent.player_id}}">-->
+                <!--<p>{{opponent.player_id}}</p>-->
+                <!--<p>{{opponent.firstname}}</p>-->
+                <!--<p>{{opponent.lastname}}</p>-->
+            <!--</a>-->
+        <!--</div>-->
     </div>
 </div>

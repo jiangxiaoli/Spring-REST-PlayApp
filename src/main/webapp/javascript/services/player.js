@@ -18,10 +18,8 @@ angular.module("snippetShare")
             find: function (id) {
                 return $http({method: "GET", url:"/players/" + id});
             },
-
-            //test????
-            update: function (player) {
-                return $http.put("/players", player, {
+            update: function (player, id) {
+                return $http.post("/players/"+id, player, {
                     //transfer $http send data format to request param
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
                     transformRequest: function(player){

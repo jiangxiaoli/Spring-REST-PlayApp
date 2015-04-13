@@ -1,27 +1,46 @@
-<h3>Create a new Player</h3>
 
-<div class="">
+<div class="jumbotron">
+
+    <h3>Create a new Player</h3>
     <div class="">
-        <form class="form-group">
-            <fieldset>
+        <form>
+            <fieldset class="form-group">
                 <label>first name</label>
-                <input name="firstname" ng-model="player.firstname" required/>
+                <input class="form-control" name="firstname" ng-model="player.firstname" required/>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="form-group">
                 <label>last name</label>
-                <input type="text" name="lastname" ng-model="player.lastname" required/>
+                <input class="form-control" type="text" name="lastname" ng-model="player.lastname" required/>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="form-group">
                 <label>email</label>
-                <input type="text" name="email" ng-model="player.email" required/>
+                <input class="form-control" type="text" name="email" ng-model="player.email" required/>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="form-group">
                 <label>Description</label>
-                <textarea name="description" ng-model="player.description"></textarea>
+                <textarea class="form-control" name="description" ng-model="player.description"></textarea>
             </fieldset>
+
+            <fieldset class="form-group">
+                <label for="street">Street</label>
+                <input class="form-control" type="text" id="street" name="street" ng-model="player.address.street">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="city">City</label>
+                <input class="form-control" type="text" id="city" name="city" ng-model="player.address.city">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="state">State</label>
+                <input class="form-control" type="text" id="state" name="state" ng-model="player.address.state">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="zip">zip</label>
+                <input class="form-control" type="text" id="zip" name="zip" ng-model="player.address.zip">
+            </fieldset>
+
 
             <input type="submit" value="{{isSubmitting ? 'saving...' : 'Save'}}" class="btn btn-default" ng-click="savePlayer(player)" ng-disabled="isSubmitting">
         </form>
