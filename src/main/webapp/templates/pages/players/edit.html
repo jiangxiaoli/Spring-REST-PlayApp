@@ -1,0 +1,34 @@
+<div class="jumbotron">
+    <div>
+        <form>
+
+            <h2>{{player.player_id}}</h2>
+            <p>{{player.firstname}}</p>
+            <p>{{player.lastname}}</p>
+            <p>{{player.email}}</p>
+            <p>{{player.description}}</p>
+
+            <h4>Address</h4>
+            <p>{{player.address.street}}</p>
+            <p>{{player.address.city}}</p>
+            <p>{{player.address.state}}</p>
+            <p>{{player.address.zip}}</p>
+
+            <h4>Sponsor</h4>
+            <a ng-href="#/sponsors/{{player.sponsor.sponsor_id}}">
+                <p>{{player.sponsor.name}}</p>
+            </a>
+
+
+        </form>
+
+        <h4>Opponents</h4>
+        <div>
+            <a ng-repeat="opponent in player.opponents" ng-href="#/players/{{opponent.player_id}}">
+                <p>{{opponent.player_id}}</p>
+                <p>{{opponent.firstname}}</p>
+                <p>{{opponent.lastname}}</p>
+            </a>
+        </div>
+    </div>
+</div>

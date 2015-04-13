@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module("snippetShare")
-    .controller("PlayersShowController", function ($http, $routeParams, $scope) {
+    .controller("PlayersShowController", function ($http, $routeParams, $scope, Player) {
 
         //request GET all players from server
-        $http({method: "GET", url:"/players/" + $routeParams.id})
+        Player.find($routeParams.id)
+        //$http({method: "GET", url:"/players/" + $routeParams.id})
             .success(function (data) {
                 console.log("get player "+ $routeParams.id+ " success");
                 console.log(data);

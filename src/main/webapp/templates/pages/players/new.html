@@ -2,7 +2,7 @@
 
 <div class="">
     <div class="">
-        <form class="form">
+        <form class="form-group">
             <fieldset>
                 <label>first name</label>
                 <input name="firstname" ng-model="player.firstname" required/>
@@ -23,7 +23,7 @@
                 <textarea name="description" ng-model="player.description"></textarea>
             </fieldset>
 
-            <button class="btn" ng-click="savePlayer(player)">Save</button>
+            <input type="submit" value="{{isSubmitting ? 'saving...' : 'Save'}}" class="btn btn-default" ng-click="savePlayer(player)" ng-disabled="isSubmitting">
         </form>
     </div>
 </div>

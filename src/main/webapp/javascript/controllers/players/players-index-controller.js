@@ -6,7 +6,7 @@ angular.module("snippetShare")
         //request GET all players from server
         Player.all()
             .success(function (data) {
-                console.log("get players success");
+                console.log("get all players success");
                 console.log(data);
                 $scope.players = data;
             });

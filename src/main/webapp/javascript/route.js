@@ -5,7 +5,7 @@ angular.module("snippetShare")
     .config(function ($routeProvider) {
         $routeProvider
             .when("/",{
-                templateUrl: "templates/pages/players/index.html"
+                redirectTo:'/players'
             })
             .when("/players",{
                 templateUrl: "templates/pages/players/index.html",
@@ -18,6 +18,10 @@ angular.module("snippetShare")
             .when("/newplayer",{
                 templateUrl: "templates/pages/players/new.html",
                 controller: "PlayersCreateController"
+            })
+            .when("/editplayer",{
+                templateUrl: "templates/pages/players/edit.html",
+                controller: "PlayersEditController"
             })
             .when("/sponsors",{
                 templateUrl: "templates/pages/sponsors/index.html",
