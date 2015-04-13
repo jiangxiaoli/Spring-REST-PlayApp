@@ -1,10 +1,9 @@
 'use strict';
 
 angular.module("snippetShare")
-    .controller("PlayersCreateController", function ($http) {
-        console.log("player create ctrl");
-        var controller = this;
-        this.savePlayer = function (player) {
+    .controller("PlayersCreateController", function ($http, $scope) {
+
+        $scope.savePlayer = function (player) {
 
             //transfer $http send data format to request param
             var transform = function(player){

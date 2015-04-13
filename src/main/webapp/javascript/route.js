@@ -13,23 +13,19 @@ angular.module("snippetShare")
             })
             .when("/players/:id",{
                 templateUrl: "templates/pages/players/show.html",
-                controller: "PlayersShowController",
-                controllerAs: "showCtrl"
+                controller: "PlayersShowController"
             })
             .when("/newplayer",{
                 templateUrl: "templates/pages/players/new.html",
-                controller: "PlayersCreateController",
-                controllerAs: "createCtrl"
+                controller: "PlayersCreateController"
             })
             .when("/sponsors",{
                 templateUrl: "templates/pages/sponsors/index.html",
-                controller: "SponsorsIndexController",
-                controllerAs: "indexCtrl"
+                controller: "SponsorsIndexController"
             })
             .when("/sponsors/:id",{
                 templateUrl: "templates/pages/sponsors/show.html",
-                controller: "SponsorsShowController",
-                controllerAs: "showCtrl"
+                controller: "SponsorsShowController"
             })
             .otherwise({ redirectTo:'/'});
 
