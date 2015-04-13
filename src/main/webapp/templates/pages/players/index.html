@@ -2,15 +2,15 @@
 
 <a class="btn btn-primary" ng-href="#/newplayer">Create a new Player</a>
 
-<div class="jumbotron">
+<div class="row">
 
     <div ng-repeat="player in players" >
-        <a class="btn btn-primary" ng-href="#/players/{{player.player_id}}">Check it</a>
-
-        <player-item
-                player_id="player.player_id" firstname="player.firstname"
-                lastname="player.lastname" email="player.email">
-        </player-item>
+        <div class="well">
+            <a ng-href="#/players/{{player.player_id}}">
+                <h4>{{player.player_id}}: {{player.firstname}} , {{player.lastname}}</h4>
+            </a>
+            <h5>{{player.email}}</h5>
+        </div>
     </div>
 
 </div>

@@ -15,7 +15,7 @@ angular.module("snippetShare")
             },
             link: function (scope, element, attrs) {
 
-                element.on("click", function () {
+                element("h5").on("click", function () {
                     alert("click on " + scope.firstname);
                     element.find("h5").css("color", "#000");
                 });

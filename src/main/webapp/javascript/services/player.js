@@ -16,7 +16,7 @@ angular.module("snippetShare")
                 });
             },
             find: function (id) {
-                $http({method: "GET", url:"/players/" + id});
+                return $http({method: "GET", url:"/players/" + id});
             },
 
             //test????
@@ -30,7 +30,7 @@ angular.module("snippetShare")
                 });
             },
             remove: function (id) {
-                $http({method: "DELETE", url:"/players/" + id});
+                return $http({method: "DELETE", url:"/players/" + id});
             }
 
         }

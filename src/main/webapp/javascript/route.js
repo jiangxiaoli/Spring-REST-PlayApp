@@ -19,7 +19,7 @@ angular.module("snippetShare")
                 templateUrl: "templates/pages/players/new.html",
                 controller: "PlayersCreateController"
             })
-            .when("/editplayer",{
+            .when("/editplayer/:id",{
                 templateUrl: "templates/pages/players/edit.html",
                 controller: "PlayersEditController"
             })
