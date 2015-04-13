@@ -9,8 +9,7 @@ angular.module("snippetShare")
             })
             .when("/players",{
                 templateUrl: "templates/pages/players/index.html",
-                controller: "PlayersIndexController",
-                controllerAs: "indexCtrl"
+                controller: "PlayersIndexController"
             })
             .when("/players/:id",{
                 templateUrl: "templates/pages/players/show.html",

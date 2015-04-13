@@ -3,7 +3,7 @@
 <a class="btn btn-primary" ng-href="#/newplayer">Create a new Player</a>
 
 <div class="jumbotron">
-    <a ng-repeat="player in indexCtrl.players" ng-href="#/players/{{player.player_id}}">
+    <a ng-repeat="player in players" ng-href="#/players/{{player.player_id}}">
         <player-item></player-item>
     </a>
 </div>
