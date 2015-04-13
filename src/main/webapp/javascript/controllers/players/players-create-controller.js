@@ -5,19 +5,6 @@ angular.module("snippetShare")
         console.log("player create ctrl");
         var controller = this;
         this.savePlayer = function (player) {
-            //handel errors
-            //controller.errors = null;
-            //$http({ method:"POST", url: "/players", data: player })
-            //    .success(function (data) {
-            //        console.log("in success");
-            //        console.log(data);
-            //    })
-            //    .catch(function (player) {
-            //        console.log("in error");
-            //        console.log(player);
-            //        controller.errors.player.error;
-            //    });
-
 
             //transfer $http send data format to request param
             var transform = function(player){
@@ -38,7 +25,6 @@ angular.module("snippetShare")
                     console.log(data);
                     console.log(status);
                 });
-
 
         }
     });
