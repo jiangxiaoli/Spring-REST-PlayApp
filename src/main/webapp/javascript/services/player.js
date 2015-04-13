@@ -1,59 +1,21 @@
 'use strict';
 
-
-var Venue = function($http, $q) {
-
-    /**
-     * constructor
-     */
-    function VenueType(config) {
-        angular.extend(this, config);
-    }
-
-    // instance methods
-    VenueType.prototype = {
-
-    };
-
-    // static methods
-    VenueType.getNearby = getNearby;
-
-    /**
-     * call the search API and return a venue
-     * @return {promise}
-     */
-    function getNearby(ll, radius, categoryId, query, limit) {
-        var deferred = $q.defer();
-
-        $http.get('https://api.foursquare.com/v2/venues/search', {
-            cache: true,
-            params: {
-                ll: ll,
-                radius: +radius,
-                categoryId: categoryId,
-                query: query,
-                limit: limit
-            }
-        }).then(function(res) {
-            var venueArray;
-            if(res.meta.code > 399) {
-                deferred.reject('error');
-            } else {
-                venueArray = _.map(res.response.venues, function(rawVenue){
-                    return new Venue(rawVenue);
+angular.module("snippetShare")
+    .factory("Player", function PlayerFactory($http){
+        return {
+            all: function(){
+                return $http({method: "GET", url:"/players"});
+            },
+            create: function(player){
+                return $http.post("/players", player, {
+                    //transfer $http send data format to request param
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
+                    transformRequest: function(player){
+                        return $.param(player);
+                    }
                 });
-                deferred.resolve(venueArray);
             }
-        }, function(err) {
-            deferred.reject(err);
-        });
+        }
 
-        return deferred.promise;
-    }
 
-    return VenueType;
-};
-
-Venue.$inject(['$http', '$q']);
-
-//angular.module('iTravel').factory('Venue', Venue);
+    });

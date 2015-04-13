@@ -1,19 +1,10 @@
 'use strict';
 
 angular.module("snippetShare")
-    .controller("PlayersCreateController", function ($http, $scope) {
+    .controller("PlayersCreateController", function ($scope, Player) {
 
         $scope.savePlayer = function (player) {
-
-            //transfer $http send data format to request param
-            var transform = function(player){
-                return $.param(player);
-            };
-
-            $http.post("/players", player, {
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
-                transformRequest: transform
-            })
+            Player.create(player)
                 .success(function(data, status, headers, config) {
                     console.log("in success");
                     console.log(data);
