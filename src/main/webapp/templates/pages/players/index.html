@@ -4,6 +4,10 @@
 
 <div class="jumbotron">
     <a ng-repeat="player in players" ng-href="#/players/{{player.player_id}}">
-        <player-item></player-item>
+        <player-item
+                player_id="player.player_id" firstname="player.firstname"
+                lastname="player.lastname" email="player.email">
+        </player-item>
+
     </a>
 </div>

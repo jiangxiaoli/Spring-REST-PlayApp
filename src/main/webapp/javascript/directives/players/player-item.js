@@ -6,10 +6,13 @@ angular.module("snippetShare")
             restrict: "E",
             templateUrl: "templates/directives/players/player-item.html",
             controller: function ($scope) {
-                $scope.player_id = "1";
-                $scope.firstname = "xiaoli";
-                $scope.lastname = "jiang";
 
+            },
+            scope: {
+                player_id: "=",
+                firstname: "=",
+                lastname: "=",
+                email: "="
             }
         }
     });
