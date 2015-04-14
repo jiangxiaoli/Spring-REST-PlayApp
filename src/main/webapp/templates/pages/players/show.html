@@ -21,11 +21,22 @@
             <!--how to deal with nested object-->
             <h4>Opponents</h4>
 
-            <div>
-                <a ng-repeat="opponent in player.opponents" ng-href="#/players/{{opponent.player_id}}">
-                    <p>{{opponent.player_id}} - {{opponent.firstname}} {{opponent.lastname}}</p>
+            <div ng-repeat="opponent in player.opponents">
+                <a  ng-href="#/players/{{opponent.player_id}}">
+                    <p>{{opponent.player_id}} - {{opponent.firstname}} {{opponent.lastname}} <a href="" ng-click="deleteOpponent(opponent)" class="btn btn-sm btn-danger">Delete</a></p>
                 </a>
             </div>
+
+            <form>
+                <fieldset class="form-group">
+                    <label>Select Player:</label>
+                    <select ng-options="player1.player_id as player1.firstname for player1 in players" ng-model="player1.player_id"></select>
+                </fieldset>
+                <input type="submit" value="{{isOpponenting ? 'saving...' : 'Save Opponent'}}" class="btn btn-default" ng-click="addOpponent(player1)" ng-disabled="isOpponenting">
+            </form>
+
+
+
         </div>
     </div>
 </div>
