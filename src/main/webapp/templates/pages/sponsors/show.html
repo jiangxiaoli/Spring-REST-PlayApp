@@ -1,14 +1,13 @@
-<div class="jumbotron">
-    <div>
-        <h2>{{sponsor.sponsor_id}}</h2>
-        <p>{{sponsor.name}}</p>
-        <p>{{sponsor.description}}</p>
+<div class="container">
+    <div class="">
+        <div>
+            <h2>{{sponsor.sponsor_id}}</h2>
+            <p>{{sponsor.name}}</p>
+            <p>{{sponsor.description}}</p>
 
-        <h4>Address</h4>
-        <p>{{sponsor.address.street}}</p>
-        <p>{{sponsor.address.city}}</p>
-        <p>{{sponsor.address.state}}</p>
-        <p>{{sponsor.address.zip}}</p>
+            <h3>Address:</h3>
+            <h4>{{sponsor.address.street}} {{sponsor.address.city}} {{sponsor.address.state}} {{sponsor.address.zip}}</h4>
 
+        </div>
     </div>
 </div>

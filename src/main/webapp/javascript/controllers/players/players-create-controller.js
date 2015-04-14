@@ -1,8 +1,16 @@
 'use strict';
 
 angular.module("snippetShare")
-    .controller("PlayersCreateController", function ($scope, Player, $location) {
+    .controller("PlayersCreateController", function ($scope, Player, Sponsor, $location) {
         $scope.isSubmitting = false;
+
+        //find all sponsor for list
+        Sponsor.all()
+            .success(function (data) {
+                console.log("get sponsors success");
+                console.log(data);
+                $scope.sponsors = data;
+            });
 
         $scope.savePlayer = function (player) {
             $scope.isSubmitting = true;

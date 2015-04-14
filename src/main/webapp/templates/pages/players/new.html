@@ -1,48 +1,55 @@
-
-<div class="jumbotron">
-
-    <h3>Create a new Player</h3>
+<div class="container">
     <div class="">
-        <form>
-            <fieldset class="form-group">
-                <label>first name</label>
-                <input class="form-control" name="firstname" ng-model="player.firstname" required/>
-            </fieldset>
 
-            <fieldset class="form-group">
-                <label>last name</label>
-                <input class="form-control" type="text" name="lastname" ng-model="player.lastname" required/>
-            </fieldset>
+        <h3>Create a new Player</h3>
+        <div class="">
+            <form>
+                <fieldset class="form-group">
+                    <label>first name</label>
+                    <input class="form-control" name="firstname" ng-model="player.firstname" required/>
+                </fieldset>
 
-            <fieldset class="form-group">
-                <label>email</label>
-                <input class="form-control" type="text" name="email" ng-model="player.email" required/>
-            </fieldset>
+                <fieldset class="form-group">
+                    <label>last name</label>
+                    <input class="form-control" type="text" name="lastname" ng-model="player.lastname" required/>
+                </fieldset>
 
-            <fieldset class="form-group">
-                <label>Description</label>
-                <textarea class="form-control" name="description" ng-model="player.description"></textarea>
-            </fieldset>
+                <fieldset class="form-group">
+                    <label>email</label>
+                    <input class="form-control" type="text" name="email" ng-model="player.email" required/>
+                </fieldset>
 
-            <fieldset class="form-group">
-                <label for="street">Street</label>
-                <input class="form-control" type="text" id="street" name="street" ng-model="player.address.street">
-            </fieldset>
-            <fieldset class="form-group">
-                <label for="city">City</label>
-                <input class="form-control" type="text" id="city" name="city" ng-model="player.address.city">
-            </fieldset>
-            <fieldset class="form-group">
-                <label for="state">State</label>
-                <input class="form-control" type="text" id="state" name="state" ng-model="player.address.state">
-            </fieldset>
-            <fieldset class="form-group">
-                <label for="zip">zip</label>
-                <input class="form-control" type="text" id="zip" name="zip" ng-model="player.address.zip">
-            </fieldset>
+                <fieldset class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" name="description" ng-model="player.description"></textarea>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="street">Street</label>
+                    <input class="form-control" type="text" id="street" name="street" ng-model="player.street">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="city">City</label>
+                    <input class="form-control" type="text" id="city" name="city" ng-model="player.city">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="state">State</label>
+                    <input class="form-control" type="text" id="state" name="state" ng-model="player.state">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="zip">zip</label>
+                    <input class="form-control" type="text" id="zip" name="zip" ng-model="player.zip">
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label>Sponsor</label>
+                    <select ng-options="sponsor.id as sponsor.name for sponsor in sponsors" ng-model="player.Sponsor_idSponsor"></select>
+                </fieldset>
 
 
-            <input type="submit" value="{{isSubmitting ? 'saving...' : 'Save'}}" class="btn btn-default" ng-click="savePlayer(player)" ng-disabled="isSubmitting">
-        </form>
+                <input type="submit" value="{{isSubmitting ? 'saving...' : 'Save'}}" class="btn btn-default" ng-click="savePlayer(player)" ng-disabled="isSubmitting">
+            </form>
+        </div>
     </div>
+
 </div>

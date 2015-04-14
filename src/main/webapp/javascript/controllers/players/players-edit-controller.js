@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module("snippetShare")
-    .controller("PlayersEditController", function ($scope, Player, $routeParams, $location) {
+    .controller("PlayersEditController", function ($scope, Player, Sponsor, $routeParams, $location) {
 
         //request GET the current player from server
         Player.find($routeParams.id)
@@ -9,6 +9,15 @@ angular.module("snippetShare")
                 console.log("get player "+ $routeParams.id+ " success");
                 console.log(data);
                 $scope.player = data;
+            });
+
+
+        //find all sponsor for list
+        Sponsor.all()
+            .success(function (data) {
+                console.log("get sponsors success");
+                console.log(data);
+                $scope.sponsors = data;
             });
 
         $scope.isSubmitting = false;

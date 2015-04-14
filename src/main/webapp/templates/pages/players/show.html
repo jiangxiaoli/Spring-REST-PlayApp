@@ -1,28 +1,31 @@
-<div class="jumbotron">
-    <div>
-
-        <a ng-href="#/editplayer/{{player.player_id}}" class="btn btn-default">Edit Note</a>
-        <a href="" ng-click="deletePlayer(player)" class="btn btn-danger">Delete</a>
-
-        <h2>{{player.player_id}}</h2>
-        <p>{{player.firstname}}, {{player.lastname}}</p>
-        <p>{{player.email}}</p>
-        <p>{{player.description}}</p>
-
-        <h4>Address</h4>
-        <p>{{player.address.street}}, {{player.address.city}}, {{player.address.state}}, {{player.address.zip}}</p>
-
-        <h4>Sponsor</h4>
-        <a ng-href="#/sponsors/{{player.sponsor.sponsor_id}}">
-            <p>{{player.sponsor.name}}</p>
-        </a>
-
-        <!--how to deal with nested object-->
-        <h4>Opponents</h4>
+<div class="container">
+    <div class="">
         <div>
-            <a ng-repeat="opponent in player.opponents" ng-href="#/players/{{opponent.player_id}}">
-                <p>{{opponent.player_id}} - {{opponent.firstname}} {{opponent.lastname}}</p>
+
+            <a ng-href="#/editplayer/{{player.player_id}}" class="btn btn-default">Edit Player</a>
+            <a href="" ng-click="deletePlayer(player)" class="btn btn-danger">Delete</a>
+
+            <h2>{{player.player_id}}</h2>
+            <p>{{player.firstname}}, {{player.lastname}}</p>
+            <p>{{player.email}}</p>
+            <p>{{player.description}}</p>
+
+            <h4>Address</h4>
+            <p>{{player.address.street}}, {{player.address.city}}, {{player.address.state}}, {{player.address.zip}}</p>
+
+            <h4>Sponsor</h4>
+            <a ng-href="#/sponsors/{{player.sponsor.sponsor_id}}">
+                <p>{{player.sponsor.name}}</p>
             </a>
+
+            <!--how to deal with nested object-->
+            <h4>Opponents</h4>
+
+            <div>
+                <a ng-repeat="opponent in player.opponents" ng-href="#/players/{{opponent.player_id}}">
+                    <p>{{opponent.player_id}} - {{opponent.firstname}} {{opponent.lastname}}</p>
+                </a>
+            </div>
         </div>
     </div>
 </div>

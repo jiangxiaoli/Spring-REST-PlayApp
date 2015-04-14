@@ -1,16 +1,19 @@
-<h4>Player index</h4>
+<div class="container">
 
-<a class="btn btn-primary" ng-href="#/newplayer">Create a new Player</a>
+    <h4>Player index</h4>
 
-<div class="row">
+    <a class="btn btn-primary" ng-href="#/newplayer">Create a new Player</a>
 
-    <div ng-repeat="player in players" >
-        <div class="well">
-            <a ng-href="#/players/{{player.player_id}}">
-                <h4>{{player.player_id}}: {{player.firstname}} , {{player.lastname}}</h4>
-            </a>
-            <h5>{{player.email}}</h5>
+    <div class="row">
+
+        <div ng-repeat="player in players" >
+            <div class="well">
+                <a ng-href="#/players/{{player.player_id}}">
+                    <h4>{{player.player_id}}: {{player.firstname}} , {{player.lastname}}</h4>
+                </a>
+                <h5>{{player.email}}</h5>
+            </div>
         </div>
-    </div>
 
+    </div>
 </div>

@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module("snippetShare")
-    .controller("SponsorsIndexController", function ($http, $scope) {
+    .controller("SponsorsIndexController", function ($scope, Sponsor) {
 
         //request GET all sponsors from server
-        $http({method: "GET", url:"/sponsors"})
+        Sponsor.all()
             .success(function (data) {
                 console.log("get sponsors success");
                 console.log(data);
